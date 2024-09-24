@@ -7,11 +7,7 @@ import { CarImgComponent } from './CarImgComponent'
 export const Herobanner = () => {
   const [count, setCount] = useState(0)
   const carsArray = [
-    {
-      c1: '#efca29',
-      c2: '#1a1a15',
-      carImg: '/img1.png',
-    },
+    { c1: '#efca29', c2: '#1a1a15', carImg: '/img1.png' },
     { c1: '#972826', c2: '#1a1a15', carImg: '/img2.png' },
     { c1: '#00D2FA', c2: '#1a1a15', carImg: '/img3.png' },
   ]
