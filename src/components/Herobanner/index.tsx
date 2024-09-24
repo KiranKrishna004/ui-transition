@@ -1,28 +1,25 @@
 import styles from './Herobanner.module.css'
 import { motion } from 'framer-motion'
-import img from '../../assets/Img1.png'
 import { useState } from 'react'
 import { BGComponent } from './BGComponent'
+import { CarImgComponent } from './CarImgComponent'
 
 export const Herobanner = () => {
   const [count, setCount] = useState(0)
-  const colors = [
-    { c1: '#efca29', c2: '#1a1a15' },
-    { c1: '#972826', c2: '#1A1A15' },
+  const carsArray = [
+    {
+      c1: '#efca29',
+      c2: '#1a1a15',
+      carImg: '/img1.png',
+    },
+    { c1: '#972826', c2: '#1a1a15', carImg: '/img2.png' },
+    { c1: '#00D2FA', c2: '#1a1a15', carImg: '/img3.png' },
   ]
-  const [isClick, setIsClicked] = useState(true)
 
   return (
     <div className={styles.container}>
-      <BGComponent isClick={isClick} color={colors[count]} />
-      <motion.div
-        className={styles.imgContainer}
-        initial={{ translateX: '50%', translateY: '-40%' }}
-        animate={{ translateX: '-50%', translateY: '-40%' }}
-        transition={{ duration: 1.25, type: 'spring' }}
-      >
-        <img src={img} className={styles.img} alt="banner img missing" />
-      </motion.div>
+      <BGComponent color={carsArray[count]} />
+      <CarImgComponent car={carsArray[count].carImg} />
       <div className={styles.titleContainer}>
         <motion.div
           initial={{ opacity: 0, translateY: 145, translateX: 10 }}
@@ -67,6 +64,7 @@ export const Herobanner = () => {
           </motion.p>
         </div>
       </div>
+
       <motion.div
         className={styles.prevbtnContainer}
         initial={{ opacity: 0, scale: 0 }}
@@ -78,15 +76,18 @@ export const Herobanner = () => {
           whileHover={{ scale: 1.2 }}
           whileTap={{
             scale: 0.9,
-            color: 'white',
-            borderColor: 'white',
+            color: '#ffffff',
+            borderColor: '#ffffff',
           }}
           transition={{ duration: 0.25 }}
+          onClick={() => {
+            const newCount = count === 0 ? 2 : count - 1
+            setCount(newCount)
+          }}
         >
           ↑
         </motion.button>
       </motion.div>
-
       <motion.div
         className={styles.nextbtnContainer}
         initial={{ opacity: 0, scale: 0 }}
@@ -95,16 +96,15 @@ export const Herobanner = () => {
       >
         <motion.button
           onClick={() => {
-            setIsClicked(true)
-            const newCount = count === 3 ? 0 : count + 1
-            setCount(count + 1)
+            const newCount = count === 2 ? 0 : count + 1
+            setCount(newCount)
           }}
           className={styles.btn}
           whileHover={{ scale: 1.2 }}
           whileTap={{
             scale: 0.9,
-            color: 'white',
-            borderColor: 'white',
+            color: '#ffffff',
+            borderColor: '#ffffff',
           }}
           transition={{ duration: 0.25 }}
         >

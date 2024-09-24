@@ -4,20 +4,6 @@
   max-height: 100vh;
 }
 
-.imgContainer {
-  width: 60%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-}
-
-.img {
-  width: 100%;
-  height: auto;
-}
-
 .titleContainer {
   position: absolute;
   width: 60%;
