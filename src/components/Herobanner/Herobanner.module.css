@@ -1,0 +1,72 @@
+.container {
+  position: relative;
+  overflow-x: hidden;
+  max-height: 100vh;
+}
+
+.imgContainer {
+  width: 60%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.titleContainer {
+  position: absolute;
+  width: 60%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.raceText {
+  font-family: Poppins, sans-serif;
+  font-size: 17.5rem;
+  font-weight: bold;
+  color: white;
+  z-index: -10;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.raceContainer {
+  display: flex;
+}
+
+.letsContainer {
+  position: absolute;
+  top: 10;
+  font-family: KaushanScript;
+  font-size: 3.125rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  color: grey;
+  background-color: transparent;
+  font-size: 1.875rem;
+  border-radius: 100%;
+  width: 75px;
+  height: 75px;
+  border: dashed 1px grey;
+  cursor: pointer;
+}
+
+.prevbtnContainer {
+  position: absolute;
+  right: 5%;
+  top: 20%;
+}
+
+.nextbtnContainer {
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+}
