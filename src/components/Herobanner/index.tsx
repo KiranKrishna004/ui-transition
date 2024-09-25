@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { BGComponent } from './BGComponent'
 import { CarImgComponent } from './CarImgComponent'
+import { TextComponent } from './TextComponent'
 
 export const Herobanner = () => {
   const [count, setCount] = useState(0)
@@ -16,50 +17,8 @@ export const Herobanner = () => {
     <div className={styles.container}>
       <BGComponent color={carsArray[count]} />
       <CarImgComponent car={carsArray[count].carImg} />
-      <div className={styles.titleContainer}>
-        <motion.div
-          initial={{ opacity: 0, translateY: 145, translateX: 10 }}
-          animate={{ opacity: 1, translateY: 30, translateX: 15 }}
-          transition={{ ease: 'easeInOut', delay: 0.75, duration: 0.5 }}
-          className={styles.letsContainer}
-        >
-          Let's
-        </motion.div>
-        <div className={styles.raceContainer}>
-          <motion.p
-            initial={{ opacity: 0, translateY: 100 }}
-            animate={{ opacity: 1, translateY: -15 }}
-            transition={{ ease: 'easeInOut', delay: 0.75, duration: 0.5 }}
-            className={styles.raceText}
-          >
-            R
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, translateY: 100 }}
-            animate={{ opacity: 1, translateY: -15 }}
-            transition={{ ease: 'easeInOut', delay: 0.85, duration: 0.5 }}
-            className={styles.raceText}
-          >
-            A
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, translateY: 100 }}
-            animate={{ opacity: 1, translateY: -15 }}
-            transition={{ ease: 'easeInOut', delay: 0.95, duration: 0.5 }}
-            className={styles.raceText}
-          >
-            C
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, translateY: 100 }}
-            animate={{ opacity: 1, translateY: -15 }}
-            transition={{ ease: 'easeInOut', delay: 1.05, duration: 0.5 }}
-            className={styles.raceText}
-          >
-            E
-          </motion.p>
-        </div>
-      </div>
+
+      <TextComponent />
 
       <motion.div
         className={styles.prevbtnContainer}
